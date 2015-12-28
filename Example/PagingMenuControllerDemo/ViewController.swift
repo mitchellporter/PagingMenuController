@@ -31,7 +31,9 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
         options.backgroundColor = UIColor.clearColor()
         options.selectedBackgroundColor = UIColor.clearColor()
         options.menuItemMargin = 16.0
-        options.image = UIImage(named: "menu-view-gradient-background-image")!
+        options.gradient = true
+        options.gradientOpacity = 0.21
+        options.gradientColors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
         
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self
