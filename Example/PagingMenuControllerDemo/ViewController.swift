@@ -26,6 +26,10 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
         options.menuHeight = 50
         options.menuItemMode = .None
         options.selectedTextColor = UIColor.whiteColor()
+        options.font = UIFont.boldSystemFontOfSize(12)
+        options.selectedFont = UIFont.boldSystemFontOfSize(12)
+        options.backgroundColor = UIColor.blackColor()
+        options.selectedBackgroundColor = UIColor.blackColor()
         
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self
