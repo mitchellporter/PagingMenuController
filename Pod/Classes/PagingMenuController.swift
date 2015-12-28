@@ -17,6 +17,7 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
     
     public weak var delegate: PagingMenuControllerDelegate?
     private var options: PagingMenuOptions!
+    public private(set) var menuGradientView: UIView?
     public private(set) var menuView: MenuView!
     public private(set) var currentPage: Int = 0
     public private(set) var currentViewController: UIViewController!
@@ -135,6 +136,9 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         
         currentPage = options.defaultPage
         
+        if options.gradient == true {
+            constructMenuGradientView()
+        }
         constructMenuView()
         constructContentScrollView()
         layoutMenuView()
@@ -253,7 +257,18 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Constructor
     
+    private func constructMenuGradientView() {
+        let gradientView = UIView(frame: CGRectMake(0.0, 0.0, UIScreen.mainScreen().bounds.size.width, options.menuHeight))
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = gradientView.bounds
+        gradientLayer.colors = options.gradientColors
+        gradientLayer.opacity = 0.22
+        gradientView.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.addSubview(gradientView)
+    }
+    
     private func constructMenuView() {
+        
         menuView = MenuView(menuItemTitles: menuItemTitles, options: options)
         menuView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(menuView)
