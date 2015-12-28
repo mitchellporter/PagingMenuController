@@ -13,6 +13,9 @@ public class PagingMenuOptions {
     public var scrollEnabled = true // in case of using swipable cells, set false
     public var backgroundColor = UIColor.whiteColor()
     public var image: UIImage?
+    public var gradient = false
+    public var gradientOpacity = 1.0
+    public var gradientColors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
     public var selectedBackgroundColor = UIColor.whiteColor()
     public var textColor = UIColor.lightGrayColor()
     public var selectedTextColor = UIColor.blackColor()

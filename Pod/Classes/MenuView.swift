@@ -33,6 +33,23 @@ public class MenuView: UIScrollView {
         constructMenuItemViews(titles: menuItemTitles)
         layoutMenuItemViews()
         constructUnderlineViewIfNeeded()
+        
+        if options.gradient == true {
+            
+            let gradientView = UIView(frame: CGRectMake(0.0, 0.0, UIScreen.mainScreen().bounds.size.width, options.menuHeight))
+//            gradientView.backgroundColor = UIColor.redColor()
+//            gradientView.alpha = 0.3
+            print(gradientView.frame)
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = gradientView.bounds
+            print(gradientLayer.frame)
+            gradientLayer.colors = options.gradientColors
+            gradientLayer.opacity = 0.22
+            gradientView.layer.insertSublayer(gradientLayer, atIndex: 0)
+            insertSubview(gradientView, atIndex: 0)
+//            addSubview(gradientView)
+        }
+
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -106,6 +123,7 @@ public class MenuView: UIScrollView {
             imageView = UIImageView(image: image)
             addSubview(imageView!)
         }
+        
     }
     
     private func constructContentView() {
