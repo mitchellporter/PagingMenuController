@@ -14,6 +14,7 @@ public class MenuView: UIScrollView {
     private var sortedMenuItemViews = [MenuItemView]()
     private var options: PagingMenuOptions!
     private var contentView: UIView!
+    private var imageView: UIImageView?
     private var underlineView: UIView!
     private var roundRectView: UIView!
     private var currentPage: Int = 0
@@ -100,8 +101,11 @@ public class MenuView: UIScrollView {
         scrollsToTop = false
         translatesAutoresizingMaskIntoConstraints = false
         
-//        layer.borderWidth = 2
-//        layer.borderColor = UIColor.redColor().CGColor
+        // TODO: Finalize gradient image setup - this was just a quick test
+        if let image = options.image {
+            imageView = UIImageView(image: image)
+            addSubview(imageView!)
+        }
     }
     
     private func constructContentView() {
