@@ -99,6 +99,9 @@ public class MenuView: UIScrollView {
         decelerationRate = options.deceleratingRate
         scrollsToTop = false
         translatesAutoresizingMaskIntoConstraints = false
+        
+//        layer.borderWidth = 2
+//        layer.borderColor = UIColor.redColor().CGColor
     }
     
     private func constructContentView() {

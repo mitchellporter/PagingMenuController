@@ -54,6 +54,7 @@ public class MenuItemView: UIView {
         } else {
             backgroundColor = selected ? options.selectedBackgroundColor : options.backgroundColor
         }
+        titleLabel.alpha = selected ? 1.0 : 0.55
         titleLabel.textColor = selected ? options.selectedTextColor : options.textColor
         titleLabel.font = selected ? options.selectedFont : options.font
 
