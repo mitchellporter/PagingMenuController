@@ -32,6 +32,7 @@ public class PagingMenuOptions {
     
     public enum MenuPosition {
         case Top
+        case TopAbove
         case Bottom
     }
     

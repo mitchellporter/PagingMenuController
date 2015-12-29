@@ -291,6 +291,8 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         switch options.menuPosition {
         case .Top:
             verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[menuView(height)]", options: [], metrics: metrics, views: viewsDictionary)
+        case .TopAbove:
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[menuView(height)]", options: [], metrics: metrics, views: viewsDictionary)
         case .Bottom:
             verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[menuView(height)]|", options: [], metrics: metrics, views: viewsDictionary)
         }
@@ -321,8 +323,9 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         switch options.menuPosition {
             // TODO: Add "above" menu position after testing
         case .Top:
-//            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[menuView][contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
-            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[contentScrollView(700)]", options: [], metrics: nil, views: viewsDictionary)
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[menuView][contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
+        case .TopAbove:
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
         case .Bottom:
             verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentScrollView][menuView]", options: [], metrics: nil, views: viewsDictionary)
         }
