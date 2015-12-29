@@ -149,10 +149,12 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         layoutPagingViewControllers()
         
         // Place menu elements on top of everything
+        if options.menuPosition == .TopAbove {
         if menuGradientView != nil {
             view.bringSubviewToFront(menuGradientView!)
         }
         view.bringSubviewToFront(menuView)
+        }
 
         currentPosition = currentPagingViewPosition()
         currentViewController = pagingViewControllers[currentPage]
