@@ -270,7 +270,7 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = menuGradientView!.bounds
         gradientLayer.colors = options.gradientColors
-        gradientLayer.opacity = 0.22
+        gradientLayer.opacity = Float(options.gradientOpacity)
         menuGradientView!.layer.insertSublayer(gradientLayer, atIndex: 0)
         view.addSubview(menuGradientView!)
     }
