@@ -147,6 +147,12 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         layoutContentView()
         constructPagingViewControllers()
         layoutPagingViewControllers()
+        
+        // Place menu elements on top of everything
+        if menuGradientView != nil {
+            view.bringSubviewToFront(menuGradientView!)
+        }
+        view.bringSubviewToFront(menuView)
 
         currentPosition = currentPagingViewPosition()
         currentViewController = pagingViewControllers[currentPage]
@@ -313,8 +319,10 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
         let verticalConstraints: [NSLayoutConstraint]
         switch options.menuPosition {
+            // TODO: Add "above" menu position after testing
         case .Top:
-            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[menuView][contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
+//            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[menuView][contentScrollView]|", options: [], metrics: nil, views: viewsDictionary)
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[contentScrollView(700)]", options: [], metrics: nil, views: viewsDictionary)
         case .Bottom:
             verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentScrollView][menuView]", options: [], metrics: nil, views: viewsDictionary)
         }
