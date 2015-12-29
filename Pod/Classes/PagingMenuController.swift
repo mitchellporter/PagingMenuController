@@ -264,13 +264,13 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
     // MARK: - Constructor
     
     private func constructMenuGradientView() {
-        let gradientView = UIView(frame: CGRectMake(0.0, 0.0, UIScreen.mainScreen().bounds.size.width, options.menuHeight))
+        menuGradientView = UIView(frame: CGRectMake(0.0, 0.0, UIScreen.mainScreen().bounds.size.width, options.menuHeight))
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = gradientView.bounds
+        gradientLayer.frame = menuGradientView!.bounds
         gradientLayer.colors = options.gradientColors
         gradientLayer.opacity = 0.22
-        gradientView.layer.insertSublayer(gradientLayer, atIndex: 0)
-        view.addSubview(gradientView)
+        menuGradientView!.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.addSubview(menuGradientView!)
     }
     
     private func constructMenuView() {
