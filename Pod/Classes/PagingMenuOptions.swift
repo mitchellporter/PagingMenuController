@@ -27,6 +27,11 @@ public class PagingMenuOptions {
     public var deceleratingRate: CGFloat = UIScrollViewDecelerationRateNormal
     public var menuDisplayMode = MenuDisplayMode.Standard(widthMode: PagingMenuOptions.MenuItemWidthMode.Flexible, centerItem: false, scrollingMode: PagingMenuOptions.MenuScrollingMode.PagingEnabled)
     public var menuItemMode = MenuItemMode.Underline(height: 3, color: UIColor.blueColor(), horizontalPadding: 0, verticalPadding: 0)
+    public var glowSize = 20
+    public var innerGlowSize = 4
+    public var glowColor = UIColor(rgb: 0x00ffff)
+    public var innerGlowColor = UIColor(rgb: 0x00ffff)
+
     internal var menuItemCount = 0
     internal let minumumSupportedViewCount = 1
     

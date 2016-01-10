@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import FBGlowLabel
 
 public class MenuItemView: UIView {
     
-    public private(set) var titleLabel: UILabel!
+    public private(set) var titleLabel: FBGlowLabel!
     private var options: PagingMenuOptions!
     private var title: String!
     private var widthLabelConstraint: NSLayoutConstraint!
@@ -75,7 +76,13 @@ public class MenuItemView: UIView {
     }
     
     private func constructLabel() {
-        titleLabel = UILabel()
+        titleLabel = FBGlowLabel()
+        
+        titleLabel.glowSize = 20
+        titleLabel.innerGlowSize = 4
+        titleLabel.glowColor = UIColor(rgb: 0x00ffff)
+        titleLabel.innerGlowColor = UIColor(rgb: 0x00ffff)
+        
         titleLabel.text = title
         titleLabel.textColor = options.textColor
         titleLabel.font = options.font
@@ -133,3 +140,15 @@ public class MenuItemView: UIView {
         return options.menuItemMargin
     }
 }
+
+extension UIColor {
+    convenience init(rgb: UInt) {
+        self.init(
+            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgb & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+}
+
