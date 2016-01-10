@@ -55,6 +55,10 @@ public class MenuItemView: UIView {
         } else {
             backgroundColor = selected ? options.selectedBackgroundColor : options.backgroundColor
         }
+        
+        titleLabel.glowSize = selected ? options.glowSize : 0
+        titleLabel.innerGlowSize = selected ? options.innerGlowSize : 0
+        
         titleLabel.alpha = selected ? 1.0 : 0.55
         titleLabel.textColor = selected ? options.selectedTextColor : options.textColor
         titleLabel.font = selected ? options.selectedFont : options.font
@@ -78,10 +82,10 @@ public class MenuItemView: UIView {
     private func constructLabel() {
         titleLabel = FBGlowLabel()
         
-        titleLabel.glowSize = 20
-        titleLabel.innerGlowSize = 4
-        titleLabel.glowColor = UIColor(rgb: 0x00ffff)
-        titleLabel.innerGlowColor = UIColor(rgb: 0x00ffff)
+        titleLabel.glowSize = options.glowSize
+        titleLabel.innerGlowSize = options.innerGlowSize
+        titleLabel.glowColor = options.glowColor
+        titleLabel.innerGlowColor = options.innerGlowColor
         
         titleLabel.text = title
         titleLabel.textColor = options.textColor

@@ -283,6 +283,30 @@ public class MenuView: UIScrollView {
         // make selected item foreground
         sortedMenuItemViews.forEach { $0.layer.zPosition = menuItemViews.indexOf($0) == currentPage ? 0 : -1 }
         
+        
+        
+        
+//        if (self.glowing) {
+//            self.glowing = NO;
+//            self.label.glowSize = 0.0;
+//            [self.label setNeedsDisplay];
+//            [UIView transitionWithView:self.label duration:1
+//                options:UIViewAnimationOptionTransitionCrossDissolve
+//                animations:^{
+//                [self.label.layer displayIfNeeded];
+//                } completion:nil];
+//        } else {
+//            self.glowing = YES;
+//            self.label.glowSize = 20.0;
+//            [self.label setNeedsDisplay];
+//            [UIView transitionWithView:self.label duration:1
+//                options:UIViewAnimationOptionTransitionCrossDissolve
+//                animations:^{
+//                [self.label.layer setNeedsDisplay];
+//                } completion:nil];
+//        }
+
+        
         setNeedsLayout()
         layoutIfNeeded()
     }
