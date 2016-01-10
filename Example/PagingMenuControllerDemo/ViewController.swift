@@ -34,6 +34,8 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
         options.gradient = true
         options.gradientOpacity = 0.21
         options.gradientColors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
+        options.glowSize = CGFloat(20)
+        options.innerGlowSize = CGFloat(4)
         
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self
