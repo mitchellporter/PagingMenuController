@@ -1,14 +1,24 @@
 PODS:
+  - FBGlowLabel (0.0.1)
   - PagingMenuController (0.7.7)
 
 DEPENDENCIES:
+  - FBGlowLabel (from `https://github.com/lyokato/FBGlowLabel.git`)
   - PagingMenuController (from `../`)
 
 EXTERNAL SOURCES:
+  FBGlowLabel:
+    :git: https://github.com/lyokato/FBGlowLabel.git
   PagingMenuController:
     :path: ../
 
+CHECKOUT OPTIONS:
+  FBGlowLabel:
+    :commit: b32e566de10ba470566f1c4b02ca4140b94164e5
+    :git: https://github.com/lyokato/FBGlowLabel.git
+
 SPEC CHECKSUMS:
+  FBGlowLabel: 35276711c4051f4a08b2d8de4e2f770fc0faf24d
   PagingMenuController: 317cba4b5aeace7e887bd113c5777b9de88acc9b
 
 COCOAPODS: 0.39.0

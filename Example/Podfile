@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'PagingMenuControllerDemo', :exclusive => true do
   pod "PagingMenuController", :path => "../"
+  pod 'FBGlowLabel', :git => 'https://github.com/lyokato/FBGlowLabel.git'
 end
 
 target 'PagingMenuControllerDemo2', :exclusive => true do
